@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const nodemailer = require("nodemailer")
 
-const { email, password, port } = require('../../config.js')
+const { email, password, port, url } = require('../../config.js')
  
 const app = express();
 
