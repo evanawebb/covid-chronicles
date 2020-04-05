@@ -20,12 +20,6 @@ const transporter = nodemailer.createTransport({
   }
 })
  
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Behold The MEVN Stack!'
-    })
-})
-
 app.post('/sendEmail', jsonParser, async (req, res) => {
   let info = await transporter.sendMail({
     from: req.body.email, // sender address

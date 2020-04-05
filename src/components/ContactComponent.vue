@@ -40,10 +40,7 @@ export default {
       textAreaText: { placeholder: 'Please tell us a little about yourself, it doesn\'t have to be too long but just so we know who we are talking too. :)', value: '' },
       message: 'Thank you for reaching out, we will be in contact soon!',
       showMessage: false,
-      name: {
-	placeholder: 'Name',
-	value: ''
-       },
+      name: { placeholder: 'Name', value: '' },
       email: { placeholder: 'Email', value: '' },
       storyTitle: 'Please fill out the form below and we will contact you regarding sharing your story!',
       volunteerTitle: 'Please fill out the form below and we will contact you regarding volunteering!'
@@ -51,7 +48,7 @@ export default {
   },
   computed: {
     title: function () {
-      return this.subject == 'story' ? this.storyTitle : this.volunteerTitle
+      return this.subject == 'share' ? this.storyTitle : this.volunteerTitle
     }
   }, 
   methods: {
@@ -59,7 +56,7 @@ export default {
       let data = {
         email: this.email.value,
 	text: '<!doctype html><html><body><div><strong>NAME:</strong> ' + this.name.value + '<br><strong>EMAIL:</strong> ' + this.email.value + '<br><strong>ABOUT:</strong> ' + this.textAreaText.value + '</div></body></html>',
-        subject: this.subject,
+        subject: this.subject == 'share' ? 'Share my story!' : 'Volunteer!',
       }
       let success = await api.sendEmail(data)
       if (success) {
