@@ -1,14 +1,17 @@
 <template>
-  <video-component />
+  <div>
+    <video-component />
+  </div>
 </template>
 
 <script>
 import VideoComponent from '@/components/VideoComponent.vue'
 
 export default {
-  name: "Home",
+  name: 'stories',
   components: {
     VideoComponent
   }
 }
 </script>
+

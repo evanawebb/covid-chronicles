@@ -1,8 +1,26 @@
 <template>
   <div id="app" class="has-background-grey-light">
+    <navigation-component />
     <router-view/>
   </div>
 </template>
+
+<script>
+import NavigationComponent from '@/components/NavigationComponent.vue'
+export default {
+  name: 'home',
+  components: {
+    NavigationComponent,
+  },
+  data () {
+    return {
+      showVolunteerForm: false,
+      showStoryForm: false,
+      showVideo: true,
+    }
+  }
+}
+</script>
 
 <style>
 #app {
