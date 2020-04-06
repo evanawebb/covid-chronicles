@@ -1,7 +1,12 @@
 <template>
-  <div id="app" class="has-background-grey-light">
-    <navigation-component />
-    <router-view/>
+  <div id="app">
+    <div class="site has-background-grey-light">
+      <navigation-component />
+      <div class="site-content">
+        <router-view/>
+      </div>
+      <footer />
+    </div>
   </div>
 </template>
 
@@ -41,5 +46,9 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.site {
+  min-height: 100vh;
 }
 </style>
